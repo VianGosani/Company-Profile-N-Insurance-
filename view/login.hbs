@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+	<style type="text/css">
+		body{
+			font-family: Arial;
+			background: #232323;
+		}
+		.card{
+			width: 350px;
+			background: white;
+			margin: 80px auto;
+			padding: 30px 20px;
+			background: white;
+		}
+		label{
+			font-family: Arial;
+			font-size: 11pt;
+		}
+		.form_login{
+			box-sizing : border-box;
+			width: 100%;
+			padding: 10px 0;
+			font-size: 11pt;
+			border: none;
+			outline: none;
+			background: none;
+		}
+		.tombol_login{
+			background: #b50000;
+			color: white;
+			font-size: 11pt;
+			width: 100%;
+			border: none;
+			border-radius: 3px;
+			padding: 10px 20px;
+		}
+		.textbox{
+			width: 100%;
+			overflow: hidden;
+			font-size: 20px;
+			padding: 8px 0;
+			margin: 8px 0;
+			border-bottom: 1px solid #232323;
+		}
+		.link{
+			color: #232323;
+			text-decoration: none;
+			font-size: 10pt;
+		}
+		.card h2{
+			font-family: Arial;
+			color: #b50000;
+			text-align: center;
+		}
+	</style>
+	<link rel="icon" type="image/icon" href="img/icon.jpeg">
+</head>
+<body>
+	<div class="card">
+		<h2>LOGIN PAGE</h2>
+		<div class="textbox"></div>
+		<br>
+		<form action="/login" method="post">
+			<div class="textbox">
+			<input type="text" name="username" placeholder="Username" class="form_login" required>
+			</div>
+			<div class="textbox">
+			<input type="password" name="password" placeholder="Password" class="form_login" required>
+			</div>
+			<br>
+			<input type="submit" name="submit" class="tombol_login" value="LOGIN">
+			<br><br>
+			<center><a href="/keluar" class="link">BACK</a></center>
+			<a href="#" class="link"><p style="text-align: right;">Don't have account?Register</p></a>
+		</form>
+	</div>
+</body>
+</html>

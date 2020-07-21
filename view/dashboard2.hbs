@@ -1,0 +1,112 @@
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Dashboard</title>
+  <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script> 
+<script src="js/jquery-3.4.1.min.js"></script>
+<script src="js/bootstrap.js"></script>
+<style type="text/css">
+  .kotak{
+    margin: auto;
+    text-align: center;
+    font-family: Helvetica;
+    width: 100%;
+    font-size: 20px;
+  }
+  .kotak ul {
+    background-color: #232323;
+    list-style: none;
+    position: relative;
+    display: inline-table;
+    width: 100%;
+    padding: 0px;
+  }
+  .kotak ul li{
+    float: left;
+  }
+  .kotak ul li:hover{
+      background: black;
+  }
+  .kotak ul li:hover a{
+      color: snow;
+  }
+  .kotak ul li a{
+      display: block;
+      padding: 20px;
+      color: white;
+      text-decoration: none;
+  }
+</style>
+</head>
+<body>
+<!-- !-->
+<div class="kotak">
+  <ul>
+    <li><img src="img/logo.jpg" width="70px" height="70px"></li>
+    <li><a href="/dashboard">Setting Team</a></li>
+    <li><a href="#">Setting Product/Service</a></li>
+    <li><a href="/dashboard2">Setting Contact</a></li>
+    <li style="float: right;"><a href="/keluar">Logout</a></li>
+  </ul>
+</div>
+<!-- ShowTables!-->
+  <div class="container">
+    <h2>Setting Kontak</h2>
+    <table class="table table-striped" id="mytable">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>E-Mail</th>
+          <th>Catatan</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+         {{#each results}}
+        <tr>
+          <td>{{ id }}</td>
+          <td>{{ email }}</td>
+          <td>{{ catatan }}</td>
+          <td>
+            <a href="javascript:void(0);" class="btn btn-sm btn-danger delete" data-id="{{ id }}">Delete</a>
+          </td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+     <!-- Modal Delete -->
+      <form id="add-row-form" action="/delete2" method="post">
+         <div class="modal fade" id="DeleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+               <div class="modal-content">
+                   <div class="modal-header">
+                      <h5 class="modal-title" id="myModalLabel">Delete Data</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                   </div>
+                   <div class="modal-body">
+                      <strong>Anda yakin mau menghapus data ini?</strong>
+                   </div>
+                   <div class="modal-footer">
+                        <input type="hidden" name="id" class="form-control id2" required>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Keluar</button>
+                        <button type="submit" class="btn btn-success">Hapus</button>
+                   </div>
+                    </div>
+            </div>
+         </div>
+     </form>
+
+<script>
+    $(document).ready(function(){
+        //tampilkan modal hapus record
+        $('#mytable').on('click','.delete',function(){
+        var id = $(this).data('id');
+        $('#DeleteModal').modal('show');
+        $('.id2').val(id);
+      });
+  });
+</script>
+</body>
+</html>

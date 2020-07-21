@@ -1,0 +1,20 @@
+-- Import database mysql (phpmyadmin)
+1. buka Xampp - Start Apache & Mysql
+3. buka browser (chrome/bebas)
+2. ketik localhost/phpmyadmin
+3. buat database pweb
+4. klik database
+5. klik import 
+6. klik choose file/pilih file 
+7. klik pweb.sql
+8. kirim/ok/send/
+
+-- cara pake nodejs (buat jalan dilocal)
+1. buka direktori (folder Pweb) kemuadian di address tulis cmd
+2. muncul tab CMD
+3. tulis -> node app.js (pastikan pada xampp, apache dan mysql telah menyala) 
+
+-- enjoy deepweb
+
+Copyright &copy - Vian Gosani (IF 08) - All Rights Reserved.
+github : 
